@@ -3,20 +3,13 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:id="@+id/edit_user_drawer"
+    tools:openDrawer="start"
     android:layout_height="match_parent"
     tools:context=".EditUserProfile">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_gravity="right"
-        android:background="@color/colorPrimary"
-        android:orientation="vertical"
-        android:padding="10dp">
 
-        <include layout="@layout/menue_main"/>
-    </LinearLayout>
-    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:fillViewport="true">
@@ -34,17 +27,15 @@
             android:layout_marginTop="10dp"
             android:padding="5dp">
 
+
             <EditText
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="4"
                 android:background="@drawable/background_edittext_home"
-                android:padding="10dp"
-                android:maxLines="1"
                 android:maxLength="40"
-
-                />
-
+                android:maxLines="1"
+                android:padding="10dp" />
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
@@ -101,29 +92,6 @@
                 android:textSize="20sp" />
 
         </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:padding="5dp">
-
-            <EditText
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="4"
-                android:background="@drawable/background_edittext_home"
-                android:padding="10dp" />
-
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="2"
-                android:text="جنسیت:"
-                android:textSize="20sp" />
-
-        </LinearLayout>
-
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -147,6 +115,48 @@
                 android:maxLength="3"/>
 
         </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:padding="5dp"
+
+         >
+            <RadioGroup
+                android:id="@+id/edit_user_profile_radioGroup"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_weight="4"
+                android:gravity="center_horizontal">
+
+                <RadioButton
+                    android:id="@+id/edit_user_profile_radiomale"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="مرد"
+                    android:textSize="20sp"
+                    android:padding="10dp" />
+
+              <RadioButton
+                  android:id="@+id/edit_user_profile_radiofemail"
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:text="زن"
+                  android:textSize="20sp"
+                  android:padding="10dp"/>
+          </RadioGroup>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:text="جنسیت:"
+                android:textSize="20sp" />
+
+        </LinearLayout>
+
+
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -187,4 +197,15 @@
     </LinearLayout>
 
     </ScrollView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:background="@color/colorPrimary"
+        android:orientation="vertical"
+        android:padding="10dp">
+
+        <include layout="@layout/menue_main"/>
+    </LinearLayout>
 </android.support.v4.widget.DrawerLayout>

@@ -17,7 +17,7 @@ import android.widget.Toast;
 
 public class HomeActivity extends AppCompatActivity {
 
-    TextView menu_user,menu_doctor,menu_history,menu_aboutus,menu_contactus;
+    TextView menu_user,menu_doctor,menu_history,menu_aboutus,menu_contactus , menu_home;
     private DrawerLayout mDrawerLayout;
 
 
@@ -44,6 +44,7 @@ public class HomeActivity extends AppCompatActivity {
         menu_aboutus=findViewById(R.id.menu_aboutus);
         menu_contactus=findViewById(R.id.menu_contactus);
         mDrawerLayout=findViewById(R.id.home_drawer);
+        menu_home=findViewById(R.id.menu_home);
     }
     //drawer menu
     private void menu() {
@@ -85,6 +86,13 @@ public class HomeActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(),HistoryActivity.class);
+                startActivity(intent);
+            }
+        });
+        menu_home.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(),HomeActivity.class);
                 startActivity(intent);
             }
         });

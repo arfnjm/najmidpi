@@ -16,9 +16,9 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 public class AboutUs extends AppCompatActivity {
-
-    TextView menu_user,menu_doctor,menu_history,menu_aboutus,menu_contactus;
+    TextView menu_user,menu_doctor,menu_history,menu_aboutus,menu_contactus , menu_home;
     private DrawerLayout mDrawerLayout;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,6 +30,21 @@ public class AboutUs extends AppCompatActivity {
         getSupportActionBar().setHomeAsUpIndicator(R.drawable.iconmenu);
 
         init();
+        menu();
+    }
+
+    private void init() {
+        menu_user=findViewById(R.id.menu_user);
+        menu_doctor=findViewById(R.id.menu_doctor);
+        menu_history=findViewById(R.id.menu_history);
+        menu_aboutus=findViewById(R.id.menu_aboutus);
+        menu_contactus=findViewById(R.id.menu_contactus);
+        mDrawerLayout=findViewById(R.id.about_us_drawer);
+        menu_home=findViewById(R.id.menu_home);
+    }
+    //drawer menu
+    private void menu() {
+
         menu_user.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -37,28 +52,6 @@ public class AboutUs extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-        menu();
-
-    }
-    private void init() {
-        menu_user=findViewById(R.id.about_menu_user);
-        menu_doctor=findViewById(R.id.menu_doctor);
-        menu_history=findViewById(R.id.menu_history);
-        menu_aboutus=findViewById(R.id.menu_aboutus);
-        menu_contactus=findViewById(R.id.menu_contactus);
-        mDrawerLayout=findViewById(R.id.about_us_drawer);
-    }
-    //drawer menu
-    private void menu() {
-
-//        menu_user.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Toast.makeText(AboutUs.this, "user", Toast.LENGTH_SHORT).show();
-//                Intent intent = new Intent(getApplicationContext(),ShowUserProfile.class);
-//                startActivity(intent);
-//            }
-//        });
         menu_doctor.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -92,8 +85,14 @@ public class AboutUs extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+        menu_home.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(),HomeActivity.class);
+                startActivity(intent);
+            }
+        });
     }
-
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
@@ -118,5 +117,6 @@ public class AboutUs extends AppCompatActivity {
             super.onBackPressed();
         }
     }
+
 
 }
